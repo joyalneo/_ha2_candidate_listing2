@@ -43,7 +43,7 @@ const CandidateList = (props) => {
     setLoading(true);
     try {
       const response = await Axios.post(
-        `https://hiringapp-dev-functions.appblox.io/listCandidates`
+        `${process.env.BLOX_FUNCTION_URL_DEV}/listCandidates`
         // {
         //   headers: {
         //     Authorization: `Bearer ${token}`,
@@ -62,7 +62,7 @@ const CandidateList = (props) => {
   const onDelete = async () => {
     try {
       await Axios.post(
-        `https://hiringapp-dev-functions.appblox.io/removeCandidate`,
+        `${process.env.BLOX_FUNCTION_URL_DEV}/removeCandidate`,
         {
           id: selected,
         }
